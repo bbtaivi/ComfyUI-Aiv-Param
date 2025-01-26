@@ -10,8 +10,9 @@
 
   Aiv Param 使用js代码与前端交互,在用户录入json字符格式时,自动检测是否是json正确格式
 
-  这个Node节点配合Aiv平台的python包sdk开发包: aivagent https://pypi.org/project/aivagent/,方便把AI应用发布到小程序、web应用、app原生应用
+  这个Node节点配合Aiv平台的python包 SDK 开发包: pip包 aivagent (https://pypi.org/project/aivagent/), 方便把AI应用发布到小程序、web应用、app原生应用
 
   ## 联系:
-    QQ: 76881573
-    Q群: 965485665
+    邮箱: 76881573@qq.com
+    Q Q: 76881573
+    Q 群: 965485665
