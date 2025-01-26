@@ -16,3 +16,5 @@
     邮箱: 76881573@qq.com
     Q Q: 76881573
     Q 群: 965485665
+  
+  [GitHub下载](https://github.com/bbtaivi/ComfyUI-Aiv-Param)
