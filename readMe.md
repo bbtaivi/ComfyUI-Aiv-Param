@@ -1,4 +1,4 @@
-# AIV Comfyui Node
+# AIV ComfyUI Node
   2025.1
 
 ## 用于ComfyUI的扩展节点
