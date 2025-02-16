@@ -22,12 +22,14 @@ r'''[
 r'''
     上面输入框填写格式: json格式数组,每个参数一个对象元素,之间用豆号","分隔, 参考如下: 
     [
-        {"id": 18, "name": "clip", "title": "提示词", "option": {"type": "text", "multi": true, "tooltip": "请在此输入提示词内容(中文)"} },
+        {"id": 18, "name": "clip", "title": "提示词", "option": {"type": "text", "multi": true, "clear": true, "tooltip": "请在此输入提示词内容(中文)"} },
         {"id": 30, "name": "seed", "title": "种子", "default": 512356789158, "option": {"type": "seed"} },
         {"id": 21, "name": "steps", "title": "步数", "option": {"type": "number", "step": 1, "min": 1, "max": 100} },
         {"id": 21, "name": "enabled", "title": "启用", "default": true, "option": {"type": "bool", "tooltip": "开启人脸增强效果"} },
         {"id": 25, "name": "model", "title": "模型", "default": "GFPGANv1.4.pth", "order": 10, "option": {"type": "combo", "values": ["GFPGANv1.3.pth", "GFPGANv1.4.pth","GPEN-BFR-512.onnx"]} },
-        {"id": 117, "name": "image", "title": "头像", "required": true, "option": {"type": "file"} }
+        {"id": 117, "name": "image", "title": "上传头像", "required": true, "option": {"type": "file", "min": 1, "max": 2048, "ext": ".jpeg,.png,.webp" } }
+        {"id": 119, "name": "audio", "title": "上传音频", "required": false, "option": {"type": "file", "min": 0, "max": 1024, "ext": "$audio", "tooltip": "如果不上传音频则使用系统预设值"} }
+
     ]
 
     注意事项：
@@ -35,8 +37,10 @@ r'''
         - 注意检查 json 格式是否正确, 可以使用在线网站检测;
         - 参数设置中,必需字段是"id"、"name",其它可选,默认是'text'类型, "id"对应ComfyUI节点的序列号(如果不知道如何显示ComfyUI节点序列中,请上网查询),"name"是节点的参数名(如果不知道参数名,可以先保存为json,再打开看);
         - 参数设置尽量指定参数类型,支持的类型有: "text"、"number"、"bool"、"seed"(种子)、"combo"(下拉框)、"file"(打开文件)等, "option"字段可以设置数据类型的一些属性;
+        - "text"类型可以设置"multi"单多行, "clear"任务启动后是否自动清除,默认是自动清除
         - "order"字段对参数排序显示,大值排前面(不填默认为10); "required"标识是否必填参数,未设置默认为true;
         - 设计好工作流后,使用ComfyUI的 Workflow -> Export(API) 菜单把工作流导出为API格式文件,在AIV平台写py代码调用json文件即可;
+        - "file"类型参数可以指定限制文件大小的"min","max" 属性, 也可以指定文件扩展名 "ext": 文件扩展名可以指定"$audio"、"$image"、"$video"、"$text"这样的变量;
 '''
                     })
                 
